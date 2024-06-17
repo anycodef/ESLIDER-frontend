@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="min-h-dvh flex items-center justify-center overflow-hidden">
+    <div class="w-full h-full flex">
+        <section id="div-sidebar" class="fixed transition-all z-10 bg-white flex flex-col items-center content-center h-dvh w-[300px] px-4 shadow-md overflow-hidden ">
+
+
+            <div id="sidebar" class="transition-all relative flex flex-col items-center content-center h-dvh w-[300px] px-4 py-3 shadow-md overflow-hidden ">
+                <div id="head-menu" class=" flex w-full justify-between items-center mb-10">
+                    <img class="w-[70%] h-[60px]" src="./../images/logo-eslider.png" alt="logo_eslider" id="logo">
+                    <i id="hide-menu" class=" fas fa-angle-left text-xl cursor-pointer transition-all hover:scale-110 rounded-full px-2 py-1"></i>
+                </div>
+                <ul id="menu-content" class="flex flex-col gap-6 w-full px-4">
+                    <li>
+                        <a href="./admin-ciclos.html" class="px-1 transition-all rounded-md py-2 flex gap-2 items-center hover:bg-[#12372A] hover:text-white">
+                            <div class="w-[30px] flex justify-center">
+                                <i class="fas fa-calendar-alt text-[17px]"></i>
+                            </div>
+                            <p class="font-medium text-lg">Ciclos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./admin-cursos.html" class="px-1 transition-all rounded-md py-2 flex gap-2 items-center  hover:bg-[#12372A] hover:text-white">
+                            <div class="w-[30px] flex justify-center">
+                                <i class="fas fa-book text-[17px]"></i>
+                            </div>
+                            <p class="font-medium text-lg">Cursos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./admin-temas.html" class="px-1 transition-all rounded-md py-2 flex gap-2 items-center  hover:bg-[#12372A] hover:text-white">
+                            <div class="w-[30px] flex justify-center">
+                                <i class="fas fa-clipboard text-xl"></i>
+                            </div>
+                            <p class="font-medium text-lg">Temas</p>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="./admin-horario.html" class="px-1 transition-all rounded-md py-2 flex gap-2 items-center  hover:bg-[#12372A] hover:text-white">
+                          <div class="w-[30px] flex justify-center">
+                              <i class="fas fa-clock text-xl"></i>
+                          </div>
+                          <p class="font-medium text-lg">Horarios</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./admin-profesores.html" class="px-1 transition-all rounded-md py-2 flex gap-2 items-center  hover:bg-[#12372A] hover:text-white">
+                          <div class="w-[30px] flex justify-center">
+                              <i class="fas fa-chalkboard-teacher text-[17px]"></i>
+                          </div>
+                          <p class="font-medium text-lg">Profesores</p>
+                      </a>
+                    </li>
+                    
+                </ul>
+                <div class="justify-between items-center content-center px-4 py-3 absolute w-full bg-[#12372A] bottom-0 left-0 flex text-white">
+                    <p id="logout-name" class="font-normal">Alumno</p>
+                    <i id="logout" class="fas fa-sign-out-alt text-xl cursor-pointer"></i>
+                </div>
+            </div>
+    
+    
+    
+    
+            
+    
+    
+    
+    
+        </section>
+
+
+      <section id="main" class="transition-all ease-in-out duration-100 w-[100%] h-dvh flex flex-col items-center ml-[300px] gap-4 py-4 overflow-y-auto">
+        <h1 class="font-bold text-center text-3xl m-4">Horarios</h1>
+        <div id="tabla-horarios" class="flex flex-col gap-2 items-center justify-center w-[80%]">
+
+          <!-- contenido -->
+
+
+        </div>
+        <div class="bg-[#12372A] w-[40%] p-4 rounded-xl text-white">
+          <h1 class="font-medium text-2xl mb-2">Registrar un horario nuevo</h1>
+          <hr>
+          <form class="my-4 flex flex-col w-full justify-between gap-4 items-center" method="">
+            <div class="flex w-full">
+                <div class="w-1/2 flex flex-col">
+                    <label class="" for="dia">Día</label>
+                    <select type="text" placeholder="lunes" id="dia" class="outline-none text-black required indent-2 flex h-10 w-[90%] rounded-md border border-input bg-background px-3 py-2 text-sm">
+                        <option value="lunes">Lunes</option>
+                        <option value="martes">Martes</option>
+                        <option value="miércoles">Miercoles</option>
+                        <option value="jueves">Jueves</option>
+                        <option value="viernes">Viernes</option>
+                        <option value="sábado">Sabado</option>
+                        <option value="domingo">Domingo</option>
+                    </select>
+                </div>
+                <div class="w-1/2 flex flex-col">
+                    <label class="indent-2" for="ciclo">Ciclo</label>
+                    <select placeholder="" id="ciclo" class="outline-none text-black required indent-2 flex h-10 w-[90%] rounded-md border border-input bg-background px-3 py-2 text-sm"></select>
+                </div>
+            </div>
+            <div class="flex w-full">
+                <div class="w-1/2 flex flex-col">
+                    <label class="indent-2" for="hora-inicio">Hora Inicio</label>
+                    <input type="time" placeholder="" id="hora-inicio" class="outline-none text-black required indent-2 flex h-10 w-[90%] rounded-md border border-input bg-background px-3 py-2 text-sm">
+                </div>
+                <div class="w-1/2 flex flex-col">
+                    <label class="indent-2" for="hora-final">Hora Final</label>
+                    <input type="time" placeholder="" id="hora-final" class="outline-none text-black required indent-2 flex h-10 w-[90%] rounded-md border border-input bg-background px-3 py-2 text-sm">
+                </div>
+            </div>
+            <div class="flex w-full">
+                <div class="w-1/2 flex flex-col">
+                    <label class="indent-2" for="profesor">Profesor</label>
+                    <select placeholder="" id="profesor" class="outline-none text-black required indent-2 flex h-10 w-[90%] rounded-md border border-input bg-background px-3 py-2 text-sm"></select>
+                </div>
+                <div class="w-1/2 flex flex-col">
+                    <label class="indent-2" for="curso">Curso</label>
+                    <select placeholder="" id="curso" class="outline-none text-black required indent-2 flex h-10 w-[90%] rounded-md border border-input bg-background px-3 py-2 text-sm"></select>
+                </div>
+            </div>
+            <div class=" w-[50%] flex justify-center mt-4">
+              <button id="create-horario" class="font-semibold h-10 w-[90%] rounded-lg border-2 border-white">Registrar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="./../js/menu.js"></script>
+    <script type="module" src="../js/admin-horario.js"></script>
+    <script src="https://kit.fontawesome.com/6a37e9e6b7.js" crossorigin="anonymous"></script>
+</body>
+</html>
