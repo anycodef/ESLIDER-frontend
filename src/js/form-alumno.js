@@ -51,7 +51,7 @@ loginBtn.addEventListener('click', async (e) => {
     const json = await response.json()
 
     if (json.error) {
-        alert(json.error)
+        console.error(json.error)
         return
     }
 
