@@ -33,7 +33,11 @@ const showThemes = async (idProfesor) => {
   }
 
   if (!response.ok) {
-    alert('Error al obtener los cursos')
+    await Swal.fire({
+      icon: 'warning',
+      title: 'Cursos',
+      text: 'Error al obtener los cursos.'
+    });
     return
   }
 

@@ -29,7 +29,11 @@ const setAlumns = async (idCurso, idProfesor, tema) => {
   })
 
   if (!response.ok) {
-    alert('Error al obtener los alumnos')
+    await Swal.fire({
+      icon: 'warning',
+      title: 'Alumnos',
+      text: 'Error al obtener los alumnos.'
+    });
     return
   }
 
@@ -106,11 +110,19 @@ const sendNotes = async (tema, idProfesor) => {
     })
 
     if (!response.ok) {
-      alert('Error al enviar las notas')
+      await Swal.fire({
+        icon: 'warning',
+        title: 'Notas',
+        text: 'Error al enviar las notas.'
+      });
       return
     }
 
-    alert('Notas enviadas correctamente')
+    await Swal.fire({
+      icon: 'success',
+      title: 'Notas',
+      text: 'Notas enviadas correctamente.'
+    });
     location.href = './profesor-cursos-notas.html'
   })
 }

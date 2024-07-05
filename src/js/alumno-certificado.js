@@ -33,7 +33,11 @@ const setCoursesAproved = async () => {
   const response = await fetchCourses()
 
   if (response.status === 404) {
-    alert('No tienes cursos finalizados')
+    await Swal.fire({
+      icon: 'warning',
+      title: 'Cursos',
+      text: 'No tienes cursos finalizados.'
+    });
     return
   }
 

@@ -71,6 +71,11 @@ const changeStatus = async (element) => {
   })
 
   if(response.ok){
+    await Swal.fire({
+      icon: 'success',
+      title: 'Profesor',
+      text: 'Se admitió al profesor correctamente.'
+    });
     location.reload()
   }
 }

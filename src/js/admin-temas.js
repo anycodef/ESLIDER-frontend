@@ -25,7 +25,11 @@ const showThemes = async () => {
   })
 
   if (!response.ok) {
-    alert('No se pudo obtener los temas')
+    Swal.fire ({
+      icon: 'warning',
+      title: 'Temas',
+      text: 'No se pudo obtener los temas.'
+    });
     return 
   }
 
@@ -107,7 +111,11 @@ createBtn.addEventListener('click', async (e) => {
   }
 
   if (nombre === '' || descripcion === '') {
-    alert('Llene todos los campos')
+    await Swal.fire ({
+      icon: 'warning',
+      title: 'Campos',
+      text: 'Llene todos los campos.'
+    });
     return
   }
 
@@ -122,7 +130,11 @@ createBtn.addEventListener('click', async (e) => {
   })
 
   if (response.ok) {
-    alert('Tema Creado')
+    await Swal.fire({
+      icon: 'success',
+      title: 'Tema',
+      title: 'Tema creado.'
+    });
     location.reload()
   }
 })

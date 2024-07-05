@@ -124,7 +124,11 @@ const matricula = async () => {
     const checkedHorarios = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(c => c.id.split('_').pop())
 
     if (checkedHorarios.length < 2) {
-      alert('Debe seleccionar dos horarios')
+      await Swal.fire({
+        icon: 'warning',
+        title: 'Horarios',
+        text: 'Debe seleccionar dos horarios.'
+      });
       return
     }
 
@@ -146,11 +150,19 @@ const matricula = async () => {
     })
 
     if (!response.ok) {
-      alert('No se pudo matricular')
+      await Swal.fire({
+        icon: 'warning',
+        title: 'Matricula',
+        text: 'No se pudo matricular.'
+      });
       return
     }
 
-    alert('Matricula exitosa')
+    await Swal.fire({
+      icon: 'success',
+      title: 'Matrícula',
+      text: 'Matrícula exitosa.'
+    });
     location.reload()
   })
 }

@@ -26,7 +26,11 @@ const showHorarios = async () => {
   })
 
   if (!response.ok) {
-    alert('No se pudo obtener los horarios')
+    await Swal.fire({
+      icon: 'warning',
+      title: 'Horarios',
+      text: 'No se pudo obtener los horarios.'
+    });
     return 
   }
 
@@ -147,11 +151,20 @@ const changeStatus = async (e) => {
   })
 
   if (!response.ok) {
-    alert('No se pudo cambiar el estado')
+    await Swal.fire({
+      icon: 'warning',
+      title: 'Estado',
+      text: 'No se pudo cambiar el estado.'
+    });
     return 
   }
 
-  alert('Se cambio el estado')
+  await Swal.fire({
+    icon: 'success',
+    title: 'Estado',
+    text: 'Se cambio el estado.'
+  });
+
   location.reload()
 }
 
@@ -248,11 +261,20 @@ createBtn.addEventListener('click', async (e) => {
   })
 
   if (!response.ok) {
-    alert('No se pudo crear el horario')
+    await Swal.fire({
+      icon: 'warning',
+      title: 'Horario',
+      text: 'No se pudo crear el horario.'
+    });
     return 
   }
 
-  alert('Se creo el horario')
+  await Swal.fire({
+    icon: 'success',
+    title: 'Horario',
+    text: 'Se creo el horario.'
+  });
+  
   location.reload()
 })
 

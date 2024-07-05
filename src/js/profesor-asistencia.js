@@ -28,7 +28,11 @@ const setAlumns = async (idHorario) => {
   })
 
   if (!response.ok) {
-    alert('Error al obtener los alumnos')
+    await Swal.fire({
+      icon: 'warning',
+      title: 'Alumnos',
+      text: 'Error al obtener los alumnos.'
+    });
     return
   }
 
@@ -106,11 +110,19 @@ const sendAsistencia = async () => {
     console.log(json.errors)
 
     if (!response.ok) {
-      alert('Error al enviar la asistencia')
+      await Swal.fire({
+        icon: 'warning',
+        title: 'Asistencia',
+        text: 'Error al enviar la asistencia.'
+      });
       return
     }
 
-    alert('Asistencia enviada')
+    await Swal.fire({
+      icon: 'success',
+      title: 'Asistencia',
+      text: 'Asistencia enviad.'
+    });
     location.href = 'profesor-horarios-asistencia.html'
   })
 }

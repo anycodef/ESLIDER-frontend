@@ -32,7 +32,11 @@ const showThemes = async (idCurso, idProfesor) => {
   })
 
   if (!response.ok) {
-    alert('Error al obtener los temas')
+    await Swal.fire({
+      icon: 'warning',
+      title: 'Temas',
+      text: 'Error al obtener los temas.'
+    });
     return
   }
 

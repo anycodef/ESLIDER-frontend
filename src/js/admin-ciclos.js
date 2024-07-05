@@ -58,7 +58,12 @@ createBtn.addEventListener('click', async (e) => {
   const fin = document.getElementById('fin').value
 
   if (ciclo === '' || inicio === '' || fin === '') {
-    alert('Llene todos los campos')
+    Swal.fire({
+      icon: 'warning',
+      title: 'Campos vacíos',
+      text: 'Por favor, llene todos los campos.'
+    });
+
     return
   }
 
@@ -79,7 +84,12 @@ createBtn.addEventListener('click', async (e) => {
   })
 
   if (response.ok) {
-    alert('Ciclo creado')
+    await Swal.fire({
+      icon: 'success',
+      title: 'Ciclo creado',
+      text: ''
+    });
+
     location.reload()
   }
 })

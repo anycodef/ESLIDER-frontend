@@ -92,7 +92,12 @@ createBtn.addEventListener('click', async (e) => {
   })
 
   if (response.ok) {
-    alert('Curso creado')
+    await Swal.fire({
+      icon: 'success',
+      title: 'Curso creado',
+      text: ''
+    });
+
     location.reload()
   }
 })

@@ -33,7 +33,11 @@ const setCourses = async () => {
   }
 
   if (!response.ok) {
-    alert('Error al obtener los horarios')
+    await Swal.fire({
+      icon: 'warning',
+      title: 'Horarios',
+      text: 'Error al obtener los horarios.'
+    });
     return
   }
 

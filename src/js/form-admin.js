@@ -29,7 +29,14 @@ logBTn.addEventListener('click', async (e) => {
   }
 
   if (response.ok) {
-    alert('Bienvenido')
+    await Swal.fire({
+      icon: 'info',
+      title: '¡Bienvenido!',
+      text: 'Estamos encantados de verte de nuevo.',
+      showConfirmButton: true,
+      confirmButtonText: 'Gracias',
+      timer: 4000
+    });
     localStorage.setItem('data', JSON.stringify(json))
     location.href = 'admin-ciclos.html'
   }
